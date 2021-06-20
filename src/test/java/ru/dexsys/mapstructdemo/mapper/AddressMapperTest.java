@@ -20,8 +20,8 @@ class AddressMapperTest {
     @BeforeEach
     void initAddressDto() {
         addressDto = new AddressDto();
-        addressDto.setCity("Izhevsk");
-        addressDto.setStreet("Udmurtskaya");
+        addressDto.setCityName("Izhevsk");
+        addressDto.setStreetName("Udmurtskaya");
         addressDto.setHouseNumber("304");
     }
 
@@ -32,8 +32,8 @@ class AddressMapperTest {
         log.info(addressDto.toString());
         log.info(address.toString());
 
-        assertEquals(addressDto.getCity(), address.getCity());
-        assertEquals(addressDto.getStreet(), address.getStreet());
+        assertEquals(addressDto.getCityName(), address.getCity());
+        assertEquals(addressDto.getStreetName(), address.getStreet());
         assertEquals(addressDto.getHouseNumber(), address.getHouseNumber());
 
     }

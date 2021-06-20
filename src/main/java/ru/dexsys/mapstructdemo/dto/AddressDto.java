@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class AddressDto {
-    private String city;
-    private String street;
+    private String cityName;
+    private String streetName;
     private String houseNumber;
 }
