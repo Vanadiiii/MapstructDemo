@@ -42,6 +42,13 @@ class OrderMapperTest {
         log.info(orderDto.toString());
         log.info(order.toString());
 
-        assertEquals("mr." + orderDto.getClientSurname(), order.getClient());
+        assertEquals(
+                orderDto.getClientSurname() + " " + orderDto.getClientName(),
+                order.getClient()
+        );
+        assertEquals(orderDto.getOrderId(), order.getId().toString());
+        assertEquals(orderDto.getClientAddress().getCity(), order.getClientAddress().getCity());
+        assertEquals(orderDto.getClientAddress().getStreet(), order.getClientAddress().getStreet());
+        assertEquals(orderDto.getClientAddress().getHouseNumber(), order.getClientAddress().getHouseNumber());
     }
 }
