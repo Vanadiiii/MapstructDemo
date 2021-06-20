@@ -1,6 +1,7 @@
 package ru.dexsys.mapstructdemo.mapper;
 
 import org.mapstruct.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import ru.dexsys.mapstructdemo.dto.OrderDto;
 import ru.dexsys.mapstructdemo.entity.Order;
 import ru.dexsys.mapstructdemo.mapper.qualifier.OrderIdQualifier;
@@ -12,6 +13,7 @@ import java.util.function.Function;
 public interface OrderMapper extends Function<OrderDto, Order> {
     @Override
     @Mapping(target = "id", source = "orderId", qualifiedBy = OrderIdQualifier.class)
+    @Mapping(target = "dateTime", source = "orderDateTime", dateFormat = "yyyy-MM-dd'T'HH:mm:ss")
     Order apply(OrderDto orderDto);
 
     @AfterMapping

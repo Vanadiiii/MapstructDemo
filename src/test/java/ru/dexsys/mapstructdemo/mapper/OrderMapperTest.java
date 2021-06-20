@@ -13,6 +13,8 @@ import ru.dexsys.mapstructdemo.dto.AddressDto;
 import ru.dexsys.mapstructdemo.dto.OrderDto;
 import ru.dexsys.mapstructdemo.entity.Order;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,6 +44,7 @@ class OrderMapperTest {
         orderDto.setOrderId(UUID.randomUUID().toString());
         orderDto.setClientName("Boris"); // 'the blade'
         orderDto.setClientSurname("Yurinov");
+        orderDto.setOrderDateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")));
         orderDto.setClientAddress(addressDto);
     }
 
@@ -60,5 +63,9 @@ class OrderMapperTest {
         assertEquals(orderDto.getClientAddress().getCityName(), order.getClientAddress().getCity());
         assertEquals(orderDto.getClientAddress().getStreetName(), order.getClientAddress().getStreet());
         assertEquals(orderDto.getClientAddress().getHouseNumber(), order.getClientAddress().getHouseNumber());
+        assertEquals(
+                LocalDateTime.parse(orderDto.getOrderDateTime(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")),
+                order.getDateTime()
+        );
     }
 }
