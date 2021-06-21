@@ -11,7 +11,9 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Function;
 
-@Mapper(componentModel = "spring", imports = UUID.class, uses = AddressMapper.class)
+@Mapper(componentModel = "spring", imports = UUID.class,
+        uses = AddressMapper.class,
+        collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED)
 public interface OrderMapper extends Function<OrderDto, Order> {
     @Override
     @Mapping(target = "id", source = "orderId", qualifiedBy = OrderIdQualifier.class)
