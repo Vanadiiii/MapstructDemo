@@ -2,22 +2,20 @@ package ru.dexsys.mapstructdemo.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.util.ReflectionUtils;
 import org.mapstruct.factory.Mappers;
-import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.springframework.test.util.ReflectionTestUtils;
 import ru.dexsys.mapstructdemo.dto.AddressDto;
 import ru.dexsys.mapstructdemo.dto.OrderDto;
 import ru.dexsys.mapstructdemo.entity.Order;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
 class OrderMapperTest {
@@ -46,6 +44,7 @@ class OrderMapperTest {
         orderDto.setClientSurname("Yurinov");
         orderDto.setOrderDateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")));
         orderDto.setClientAddress(addressDto);
+        orderDto.setPrice("$2345.22");
     }
 
     @Test
@@ -67,5 +66,6 @@ class OrderMapperTest {
                 LocalDateTime.parse(orderDto.getOrderDateTime(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")),
                 order.getDateTime()
         );
+        assertEquals(order.getPrice(), new BigDecimal(orderDto.getPrice().replace("$", "")));
     }
 }

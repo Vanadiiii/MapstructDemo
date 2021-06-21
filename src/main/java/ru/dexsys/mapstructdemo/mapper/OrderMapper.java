@@ -1,7 +1,6 @@
 package ru.dexsys.mapstructdemo.mapper;
 
 import org.mapstruct.*;
-import org.springframework.format.annotation.DateTimeFormat;
 import ru.dexsys.mapstructdemo.dto.OrderDto;
 import ru.dexsys.mapstructdemo.entity.Order;
 import ru.dexsys.mapstructdemo.mapper.qualifier.OrderIdQualifier;
@@ -15,6 +14,11 @@ public interface OrderMapper extends Function<OrderDto, Order> {
     @Mapping(target = "id", source = "orderId", qualifiedBy = OrderIdQualifier.class)
     @Mapping(target = "dateTime", source = "orderDateTime", dateFormat = "yyyy-MM-dd'T'HH:mm:ss")
     Order apply(OrderDto orderDto);
+
+    @BeforeMapping
+    default void removeDollarSign(OrderDto orderDto) {
+        orderDto.setPrice(orderDto.getPrice().replace("$", ""));
+    }
 
     @AfterMapping
     default void setFullName(@MappingTarget Order order, OrderDto orderDto) {

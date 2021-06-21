@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class OrderDto {
     private String orderId;
     private String orderDateTime;
+    private String price;
 
     private String clientName;
     private String clientSurname;
