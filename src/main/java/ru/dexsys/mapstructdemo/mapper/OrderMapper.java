@@ -5,6 +5,9 @@ import ru.dexsys.mapstructdemo.dto.OrderDto;
 import ru.dexsys.mapstructdemo.entity.Order;
 import ru.dexsys.mapstructdemo.mapper.qualifier.OrderIdQualifier;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Function;
 
@@ -14,6 +17,14 @@ public interface OrderMapper extends Function<OrderDto, Order> {
     @Mapping(target = "id", source = "orderId", qualifiedBy = OrderIdQualifier.class)
     @Mapping(target = "dateTime", source = "orderDateTime", dateFormat = "yyyy-MM-dd'T'HH:mm:ss")
     Order apply(OrderDto orderDto);
+
+    List<Order> applyToList(List<OrderDto> orderDtoList);
+
+    Set<Order> applyToSet(List<OrderDto> orderDtoList);
+
+    //for example: for case when key returns in format 'x-12'
+    @MapMapping(keyNumberFormat = "x-#")
+    Map<Integer, Order> applyToMap(Map<String, OrderDto> orderDtoMap);
 
     @BeforeMapping
     default void removeDollarSign(OrderDto orderDto) {
