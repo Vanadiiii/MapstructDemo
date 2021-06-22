@@ -1,4 +1,4 @@
-package ru.dexsys.mapstructdemo.dto;
+package ru.dexsys.mapstructdemo.simple.dto;
 
 public enum GoodTypeDto {
     ELECTRONICS_TYPE,

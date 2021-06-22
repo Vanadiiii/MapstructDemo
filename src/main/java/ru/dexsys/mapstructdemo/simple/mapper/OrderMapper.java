@@ -1,11 +1,10 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 import org.mapstruct.*;
-import ru.dexsys.mapstructdemo.dto.OrderDto;
-import ru.dexsys.mapstructdemo.entity.Order;
-import ru.dexsys.mapstructdemo.mapper.qualifier.OrderIdQualifier;
+import ru.dexsys.mapstructdemo.simple.dto.OrderDto;
+import ru.dexsys.mapstructdemo.simple.entity.Order;
+import ru.dexsys.mapstructdemo.simple.mapper.qualifier.OrderIdQualifier;
 
-import java.util.Map;
 import java.util.UUID;
 import java.util.function.Function;
 

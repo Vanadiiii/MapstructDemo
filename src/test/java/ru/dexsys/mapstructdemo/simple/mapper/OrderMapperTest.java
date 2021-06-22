@@ -1,4 +1,4 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 import org.mockito.Spy;
 import org.springframework.test.util.ReflectionTestUtils;
-import ru.dexsys.mapstructdemo.dto.AddressDto;
-import ru.dexsys.mapstructdemo.dto.OrderDto;
-import ru.dexsys.mapstructdemo.entity.Order;
+import ru.dexsys.mapstructdemo.simple.dto.AddressDto;
+import ru.dexsys.mapstructdemo.simple.dto.OrderDto;
+import ru.dexsys.mapstructdemo.simple.entity.Order;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

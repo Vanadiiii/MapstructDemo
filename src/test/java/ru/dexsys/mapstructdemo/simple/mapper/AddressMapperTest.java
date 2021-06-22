@@ -1,12 +1,12 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 import org.mockito.Spy;
-import ru.dexsys.mapstructdemo.dto.AddressDto;
-import ru.dexsys.mapstructdemo.entity.Address;
+import ru.dexsys.mapstructdemo.simple.dto.AddressDto;
+import ru.dexsys.mapstructdemo.simple.entity.Address;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

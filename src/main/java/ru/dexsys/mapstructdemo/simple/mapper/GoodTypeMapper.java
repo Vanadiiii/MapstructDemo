@@ -1,10 +1,10 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 import org.mapstruct.EnumMapping;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
-import ru.dexsys.mapstructdemo.dto.GoodTypeDto;
-import ru.dexsys.mapstructdemo.entity.GoodType;
+import ru.dexsys.mapstructdemo.simple.dto.GoodTypeDto;
+import ru.dexsys.mapstructdemo.simple.entity.GoodType;
 
 @Mapper(componentModel = "spring")
 public interface GoodTypeMapper {

@@ -1,4 +1,4 @@
-package ru.dexsys.mapstructdemo.mapper.qualifier;
+package ru.dexsys.mapstructdemo.simple.mapper.qualifier;
 
 import org.mapstruct.Qualifier;
 

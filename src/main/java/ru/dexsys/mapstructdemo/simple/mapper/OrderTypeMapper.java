@@ -1,10 +1,10 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ValueMapping;
-import ru.dexsys.mapstructdemo.dto.OrderTypeDto;
-import ru.dexsys.mapstructdemo.entity.OrderType;
+import ru.dexsys.mapstructdemo.simple.dto.OrderTypeDto;
+import ru.dexsys.mapstructdemo.simple.entity.OrderType;
 
 import java.util.function.Function;
 

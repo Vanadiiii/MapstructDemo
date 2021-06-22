@@ -1,4 +1,4 @@
-package ru.dexsys.mapstructdemo.entity;
+package ru.dexsys.mapstructdemo.simple.entity;
 
 public enum OrderType {
     DELIVERY,

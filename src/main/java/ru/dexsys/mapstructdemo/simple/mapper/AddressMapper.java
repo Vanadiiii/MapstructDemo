@@ -1,10 +1,10 @@
-package ru.dexsys.mapstructdemo.mapper;
+package ru.dexsys.mapstructdemo.simple.mapper;
 
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.dexsys.mapstructdemo.dto.AddressDto;
-import ru.dexsys.mapstructdemo.entity.Address;
+import ru.dexsys.mapstructdemo.simple.dto.AddressDto;
+import ru.dexsys.mapstructdemo.simple.entity.Address;
 
 import java.util.function.Function;
 
