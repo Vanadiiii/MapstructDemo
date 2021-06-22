@@ -14,5 +14,8 @@ public class OrderDto {
     private String clientSurname;
     private AddressDto clientAddress;
 
+    private OrderTypeDto orderTypeDto;
+    private GoodTypeDto goodTypeDto;
+
     private final List<String> comments;
 }

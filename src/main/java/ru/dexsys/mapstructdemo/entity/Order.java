@@ -20,6 +20,9 @@ public class Order {
     private String client;
     private Address clientAddress;
 
+    private OrderType orderType;
+    private GoodType goodType;
+
     @Setter(value = AccessLevel.NONE)
     private List<String> comments = new ArrayList<>();
 }
