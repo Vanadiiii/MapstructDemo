@@ -1,21 +1,22 @@
 package ru.dexsys.mapstructdemo.advanced1.factory;
 
 import org.mapstruct.TargetType;
-import ru.dexsys.mapstructdemo.advanced1.entity.Car;
-import ru.dexsys.mapstructdemo.advanced1.entity.RacingCar;
-import ru.dexsys.mapstructdemo.advanced1.entity.Sedan;
-import ru.dexsys.mapstructdemo.advanced1.entity.Track;
+import org.springframework.stereotype.Component;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Car;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.RacingCar;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Sedan;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Track;
 
+@Component
 public class CarFactory {
 
-    //method, which params annotated by @TargetType and returns required type
-    public <T extends Car> Car createCar(@TargetType Class<T> carClass) {
+    public <T extends Car> T createCar(@TargetType Class<T> carClass) {
         if (RacingCar.class.equals(carClass)) {
-            return new RacingCar();
+            return (T) RacingCar.of();
         } else if (Track.class.equals(carClass)) {
-            return new Track();
+            return (T) Track.of();
         } else if (Sedan.class.equals(carClass)) {
-            return new Sedan();
+            return (T) Sedan.of();
         } else {
             throw new RuntimeException("unmapped car type - " + carClass.getName());
         }

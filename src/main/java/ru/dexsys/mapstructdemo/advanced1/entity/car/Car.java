@@ -1,4 +1,4 @@
-package ru.dexsys.mapstructdemo.advanced1.entity;
+package ru.dexsys.mapstructdemo.advanced1.entity.car;
 
 import lombok.Data;
 

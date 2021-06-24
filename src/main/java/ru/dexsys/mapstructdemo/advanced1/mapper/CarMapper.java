@@ -3,10 +3,10 @@ package ru.dexsys.mapstructdemo.advanced1.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import ru.dexsys.mapstructdemo.advanced1.dto.CarDto;
-import ru.dexsys.mapstructdemo.advanced1.entity.Car;
-import ru.dexsys.mapstructdemo.advanced1.entity.RacingCar;
-import ru.dexsys.mapstructdemo.advanced1.entity.Sedan;
-import ru.dexsys.mapstructdemo.advanced1.entity.Track;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Car;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.RacingCar;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Sedan;
+import ru.dexsys.mapstructdemo.advanced1.entity.car.Track;
 import ru.dexsys.mapstructdemo.advanced1.factory.CarDtoFactory;
 import ru.dexsys.mapstructdemo.advanced1.factory.CarFactory;
 
