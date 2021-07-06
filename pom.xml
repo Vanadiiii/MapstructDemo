@@ -38,6 +38,13 @@
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-parent</artifactId>
+            <version>${mapstruct.version}</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
     <build>
